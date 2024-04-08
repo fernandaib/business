@@ -1,0 +1,308 @@
+body{
+    height: 100vh;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    font-family: "Inter Tight", sans-serif;     
+
+    background-image: url("../images/themis640_H920.jpg");
+    background-position: center;
+    background-repeat: no-repeat; 
+
+    animation-name: fade;
+    animation-duration: 3s;
+}
+/* """""""""""""""""""""""""""""""""
+    Links
+""""""""""""""""""""""""""""""" */
+a{  color: #FFF;  
+    text-decoration: none;
+}
+/* ----------------------------------------------------------------
+Menu
+---------------------------------------------------------------- */
+header{    
+    width: 100%;
+    top: 0;
+    left: 0;    
+    z-index: 100;          
+}
+
+.pcMenu{
+    display: none;
+}
+
+.mobileMenu{
+    padding: 1em 5vw;  
+}
+
+.mobileBrand{
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.mobileMenu ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*....................... Animation.............................. */
+
+@keyframes fade {
+    from {opacity: 0%;}
+    to {opacity: 100%;}
+    }
+/* ..................................................................
+Java Script: Button Close - Open
+.................................................................. */
+.fa-bars{
+    display: block;
+}
+.fa-xmark{
+    display: none;
+}
+
+.switchOn{
+    display: block;
+}
+.switchOff{
+    display: none;
+}  
+
+.toggle-btn{
+    border: none;
+    font-size: 1.25em;
+    background-color: rgba(255, 255, 255, 0);
+    color: #FFF;
+    text-shadow: 2px 2px 1px rgba(120, 99, 71, .5);
+    cursor: pointer;
+}
+
+.pcMenu.show{
+    background-color: #a0a09e;
+    font-size: 1.5em;
+    font-weight: bold;
+    height: 100vh;     
+    position: absolute;    
+    top: 0;
+    width: 100%;
+    z-index: -4;  
+
+    text-align: center;   
+    display: flex;   
+    flex-direction: column;
+    justify-content:space-around;
+    line-height: 4;
+    text-shadow: 2px 2px 1px rgba(120, 99, 71, .5);    
+}
+
+.pcMenu.show a:hover{
+    border: solid 1px #FFF;
+    padding: .25em .5em;
+}
+
+.mobileBrand{
+    font-family: "Kaisei Decol", serif;
+    color: #FFF;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-shadow: 2px 2px 1px rgba(120, 99, 71, .5);
+}
+.pcBrand{
+    display: none;
+}
+/* ----------------------------------------------------------------
+Jumbotron
+---------------------------------------------------------------- */
+.jumbotron{    
+    margin-top: auto; 
+    color: #786347;  
+}
+
+.jumbotron blockquote{
+    background-color: rgba(255, 255, 255, .7);
+    width: 80vw;   
+    padding: 1em;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.learnMore-btn{
+    font-family: "Carrois Gothic SC", sans-serif;
+    font-size: 1em;
+    text-transform: lowercase;
+    cursor: pointer;
+    text-align: center;    
+    padding: .25em 1em;
+    border: none;
+    background-color: #786347;    
+    color: #FFF;
+}
+.jumbotron blockquote h1{
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+.learnMore-btn:hover{
+    background-color: #2b2313;  
+    color: #FFF;
+}
+
+.learnMore-btn:hover:after{
+    content: '\f061';
+    display: inline-block;
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;    
+    padding-left: .25em;
+}
+/* ----------------------------------------------------------------
+Main
+---------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------
+Footer
+---------------------------------------------------------------- */
+
+footer{
+    color: #FFF;
+    margin-top: auto;
+    width: 100%; 
+    padding: 0.5em 5vw;    
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gralInfo{
+    font-size: .5em;
+    color: rgba(160, 160, 158, .5);
+    line-height: 1.5;
+}
+
+.gralInfo a{
+    color: rgba(160, 160, 158, .5);
+}
+
+
+.socialMedia{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.25em;
+    text-shadow: 2px 2px 1px rgba(120, 99, 71, .5);
+    gap: 1em;
+}
+
+.socialMedia a:hover{
+    font-size: 1.5em;
+    color: #2b2313;
+
+}
+
+
+/* ============================================================================= 
+SCREEN MIN 800
+============================================================================= */
+@media screen and (min-width: 800px){
+    .homePage{
+        background-image: url("../images/themis1920_H1280.jpg");
+    }
+    header,footer{
+        padding: .5em 10vw; 
+    }
+    .mobileMenu{
+        display: none;
+    }
+    .pcMenu,.pcBrand{
+        all:unset;
+    }
+    .pcBrand{
+        font-family: "Kaisei Decol", serif;
+        font-size: 1.75em;
+        font-weight: bold;
+    }
+    .pcMenu{
+        margin: 1em 5vw;
+        font-size: 1.25em;
+        font-weight: bold;
+        text-shadow: 2px 2px 1px rgba(120, 99, 71, .5);
+    }
+    
+    .pcMenu ul{        
+         
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 1.5em;
+    }
+
+    .pcMenu li:first-child{
+        margin-right: auto;
+    }
+
+    .pcMenu a:hover{
+        border: solid 1px #FFF;
+        padding: .25em .5em;
+    }
+
+    .pcBrand a:hover{
+        border: none;
+        padding: 0;
+    }
+    /* ----------------------------------------------------------------
+    Jumbotron
+    ---------------------------------------------------------------- */
+    .jumbotron blockquote{
+        width: 40vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        line-height: 1.5;        
+    }
+
+    .learnMore-btn{
+        margin-left: auto;
+        
+    }
+
+    .jumbotron blockquote h1{
+        font-size: 1.75em;
+        font-weight: bold;
+        margin-right: auto;        
+    }
+
+    .learnMore-btn{
+        font-size: 1.25em;
+    }
+
+    /* ----------------------------------------------------------------
+    Footer
+    ---------------------------------------------------------------- */
+    .gralInfo{
+        font-size: .75em;
+        color: rgba(255, 255, 255, .5);
+    }
+    
+    .gralInfo a{
+        color: rgba(255, 255, 255, .5);;
+    }
+
+    .socialMedia{
+        font-size: 1.5em;
+    }
+
+    .socialMedia a:hover{
+        color: #FFF;
+    }
+
+  
+}
